@@ -1,4 +1,6 @@
-package com.wyb.rxhttp;
+package com.wyb.rxhttp.response;
+
+import com.wyb.rxhttp.bean.BookInfo;
 
 import java.util.List;
 

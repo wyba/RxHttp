@@ -1,6 +1,6 @@
-package com.wyb.rxhttp;
+package com.wyb.rxhttp.bean;
 
-public class BookInfo {
+public class BorrowBookInfo {
 
     private String book_date_public;
 
@@ -15,6 +15,8 @@ public class BookInfo {
     private String book_img_url;
 
     private String book_press;
+
+    private String be_overdue_status;
 
     public String getBook_date_public() {
         return book_date_public;
@@ -72,9 +74,17 @@ public class BookInfo {
         this.book_press = book_press;
     }
 
+    public String getBe_overdue_status() {
+        return be_overdue_status;
+    }
+
+    public void setBe_overdue_status(String be_overdue_status) {
+        this.be_overdue_status = be_overdue_status;
+    }
+
     @Override
     public String toString() {
-        return "BookInfo{" +
+        return "BorrowBookInfo{" +
                 "book_date_public='" + book_date_public + '\'' +
                 ", book_anthor='" + book_anthor + '\'' +
                 ", book_brief='" + book_brief + '\'' +
@@ -82,6 +92,7 @@ public class BookInfo {
                 ", book_name='" + book_name + '\'' +
                 ", book_img_url='" + book_img_url + '\'' +
                 ", book_press='" + book_press + '\'' +
+                ", be_overdue_status='" + be_overdue_status + '\'' +
                 '}';
     }
 }

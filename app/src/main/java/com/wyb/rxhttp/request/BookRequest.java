@@ -1,4 +1,4 @@
-package com.wyb.rxhttp;
+package com.wyb.rxhttp.request;
 
 public class BookRequest {
 

@@ -1,20 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_test"
+        android:id="@+id/btn_query_shelf_book"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="架体图书信息查询"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/btn_query_reader_borrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取读者借阅图书的信息"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_shelf_borrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="架体图书借阅"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_shelf_return"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="架体图书还书"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_query_position_by_tid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="根据书的TID查位置"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_query_book_by_tid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="根据书的TID查书信息"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+
     <TextView
         android:id="@+id/tv_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"/>
 
-</RelativeLayout>
+</LinearLayout>

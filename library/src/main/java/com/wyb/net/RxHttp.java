@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.wyb.net.api.ApiService;
 import com.wyb.net.request.GetRequest;
+import com.wyb.net.request.PostRequest;
 import com.wyb.net.util.JSONUtils;
 
 import java.util.Map;
@@ -35,8 +36,9 @@ public class RxHttp {
 
     /**
      * 需要在Application中初始化
-     * @param baseUrl  以“/”结尾，例如"http://192.168.0.107:8080/"
-     * @param timeOut  超时时间
+     *
+     * @param baseUrl 以“/”结尾，例如"http://192.168.0.107:8080/"
+     * @param timeOut 超时时间
      */
     public void init(String baseUrl, long timeOut) {
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
@@ -68,11 +70,14 @@ public class RxHttp {
     }
 
     public GetRequest get(String url, Map<String, String> params) {
-        return new GetRequest(url,params);
+        return new GetRequest(url, params);
     }
 
     public GetRequest get(String url, Object object) {
         return new GetRequest(url, JSONUtils.beanToMap(object));
     }
 
+    public PostRequest post(String url, String content) {
+        return new PostRequest(url, content);
+    }
 }
