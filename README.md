@@ -18,6 +18,7 @@
          RxHttp.getInstance().init("http://192.168.2.112:8081/", 20 * 1000);
 
    Use:
+   
           RxHttp.getInstance().get("book/framebookquery", bookRequest).execute(new CommonCallBack<BookResponse>() {
                      @Override
                      public void onFinal(BookResponse bookResponse) {
