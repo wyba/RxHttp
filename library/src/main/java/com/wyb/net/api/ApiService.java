@@ -3,6 +3,7 @@ package com.wyb.net.api;
 import java.util.Map;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -19,6 +20,6 @@ public interface ApiService {
     Observable<ResponseBody> getObject(@Url String url, @QueryMap Map<String, Object> maps);
 
     @POST()
-    Observable<ResponseBody> postBody(@Url String url, @Body String body);
+    Observable<ResponseBody> postBody(@Url String url, @Body RequestBody requestBody);
 
 }

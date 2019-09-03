@@ -9,7 +9,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        RxHttp.getInstance().init("http://192.168.2.112:8081/", 20 * 1000);
+        RxHttp.init("http://192.168.2.110:8276/IddsApi/V1.0/", 20 * 1000);
     }
 
 }

@@ -16,23 +16,14 @@ import okhttp3.ResponseBody;
 
 public class GetRequest {
 
-    private String url;
 
-    private Map<String, String> params;
-
-    public GetRequest(String url, Map<String, String> params) {
-        this.url = url;
-        this.params = params;
-    }
-
-
-    public <T> void execute(final CallBack<T> callBack) {
+    public <T> void execute(String url, Map<String, String> params, final CallBack<T> callBack) {
 
         CompositeDisposable disposables = new CompositeDisposable();
 
         callBack.onStart();
 
-        disposables.add(RxHttp.getInstance().getApiService().get(url, params)
+        disposables.add(RxHttp.getApiService().get(url, params)
                 // Run on a background thread
                 .subscribeOn(Schedulers.io())
                 // Be notified on the main thread

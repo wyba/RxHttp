@@ -4,58 +4,61 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_query_shelf_book"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="架体图书信息查询"
-        android:textSize="20sp" />
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_query_reader_borrow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="获取读者借阅图书的信息"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/et_base_url"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="http://192.168.2.110:8276/IddsApi/V1.0/" />
 
-    <Button
-        android:id="@+id/btn_shelf_borrow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="架体图书借阅"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
+        <Button
+            android:id="@+id/btn_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置"
+            android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btn_shelf_return"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="架体图书还书"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_query_position_by_tid"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="根据书的TID查位置"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_query_book_by_tid"
+        <EditText
+            android:id="@+id/et_url"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Loan/GetFlowProcessList" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="根据书的TID查书信息"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:text="{}" />
 
     <TextView
-        android:id="@+id/tv_msg"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_response"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp" />
 
 </LinearLayout>
