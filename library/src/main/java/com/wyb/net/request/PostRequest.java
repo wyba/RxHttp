@@ -68,7 +68,45 @@ public class PostRequest {
 
     }
 
-    public <T> void uploadSingleFile(String url,String contentKey, String content, String fileKey, String filePath, final CallBack<T> callBack) {
+
+    public void executeR1(String url, String content, final CallBack<ResponseBody> callBack) {
+
+        CompositeDisposable disposables = new CompositeDisposable();
+
+        callBack.onStart();
+
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+        RequestBody requestBody = RequestBody.create(JSON, content);
+
+        disposables.add(RxHttp.getApiService().postBody(url, requestBody)
+                // Run on a background thread
+                .subscribeOn(Schedulers.io())
+                // Be notified on the main thread
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(new DisposableObserver<ResponseBody>() {
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        callBack.onResponse(responseBody);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e("PostRequest", "onError==" + e.getMessage());
+                        callBack.onError(e);
+                        callBack.onComplete();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Log.e("PostRequest", "onComplete");
+                        callBack.onComplete();
+                    }
+                }));
+
+    }
+
+    public <T> void uploadSingleFile(String url, String contentKey, String content, String fileKey, String filePath, final CallBack<T> callBack) {
 
         CompositeDisposable disposables = new CompositeDisposable();
 

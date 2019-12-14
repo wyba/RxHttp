@@ -12,6 +12,7 @@ import java.util.Map;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 
 public class RxHttp {
@@ -44,6 +45,10 @@ public class RxHttp {
 
     public static <T> void post(String url, String content, CallBack<T> callBack) {
         postRequest.execute(url, content, callBack);
+    }
+
+    public static void postR1(String url, String content, CallBack<ResponseBody> responseBodyCallBack) {
+        postRequest.executeR1(url, content, responseBodyCallBack);
     }
 
     public static <T> void uploadSingleFile(String url, String contentKey, String content, String fileKey, String filePath, final CallBack<T> callBack) {
