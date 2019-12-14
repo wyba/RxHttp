@@ -15,7 +15,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="http://192.168.2.110:8276/IddsApi/V1.0/" />
+            android:text="http://192.168.2.111:8888/" />
 
         <Button
             android:id="@+id/btn_set"
@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Loan/GetFlowProcessList" />
+            android:text="Service1.svc/GpsUpFile" />
 
         <Button
             android:id="@+id/btn_send"
@@ -55,10 +55,24 @@
         android:layout_marginTop="20dp"
         android:text="{}" />
 
-    <TextView
-        android:id="@+id/tv_response"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_response"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>

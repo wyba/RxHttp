@@ -56,10 +56,19 @@ public class MainActivity extends AppCompatActivity {
 
                 tvResponse.setText("");
 
-                RxHttp.post(url, content, new CommonCallBack<String>() {
+//                RxHttp.post(url, content, new CommonCallBack<String>() {
+//                    @Override
+//                    public void onFinal(String s) {
+//                        tvResponse.setText(JSONUtils.stringToJSON(s));
+//                    }
+//                });
+
+//                /storage/emulated/0/DenseShelf/Pic/1576224692881.jpg
+
+                RxHttp.uploadSingleFile(url, "content", "123", "file", "/storage/emulated/0/DenseShelf/Pic/1576224692881.jpg", new CommonCallBack<String>() {
                     @Override
                     public void onFinal(String s) {
-                        tvResponse.setText(JSONUtils.stringToJSON(s));
+
                     }
                 });
                 break;

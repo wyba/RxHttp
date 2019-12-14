@@ -6,8 +6,12 @@ import com.wyb.net.request.GetRequest;
 import com.wyb.net.request.PostRequest;
 import com.wyb.net.util.JSONUtils;
 
+import java.io.File;
 import java.util.Map;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Retrofit;
 
 public class RxHttp {
@@ -40,5 +44,9 @@ public class RxHttp {
 
     public static <T> void post(String url, String content, CallBack<T> callBack) {
         postRequest.execute(url, content, callBack);
+    }
+
+    public static <T> void uploadSingleFile(String url, String contentKey, String content, String fileKey, String filePath, final CallBack<T> callBack) {
+        postRequest.uploadSingleFile(url, contentKey, content, fileKey, filePath, callBack);
     }
 }
