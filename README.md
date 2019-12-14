@@ -9,7 +9,7 @@
         
         
         dependencies {
-        	        implementation 'com.github.wyba:RxHttp:V1.0.1'
+        	        implementation 'com.github.wyba:RxHttp:V1.0.2'
         	}
         	
 
